@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="A-StarProject.cpp" />
+    <ClCompile Include="MapLoading.cpp">
+      <Filter>Map/Pathfinding\.cpp Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Map/Pathfinding">
+      <UniqueIdentifier>{a6da5edf-c248-44f7-a19d-d714390f408c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Map/Pathfinding\.cpp Files">
+      <UniqueIdentifier>{5a90e735-9689-45d0-9817-6c2a4a6b35c0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Map/Pathfinding\.h Files">
+      <UniqueIdentifier>{5827d600-6cbc-48af-afc4-a6930b6a57b9}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="MapLoading.h">
+      <Filter>Map/Pathfinding\.h Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
