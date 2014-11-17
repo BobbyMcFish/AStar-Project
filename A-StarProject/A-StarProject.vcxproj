@@ -125,12 +125,14 @@ copy "C:\ProgramData\TL-Engine\3rd Party\TL-Xtreme\shader\*.*" "$(OutDir)" &gt; 
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="A-StarProject.cpp" />
+    <ClCompile Include="aStarAlgo.cpp" />
     <ClCompile Include="MapLoading.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="aStarAlgo.h" />
     <ClInclude Include="MapLoading.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

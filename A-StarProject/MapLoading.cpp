@@ -18,7 +18,7 @@ MapCreation::MapCreation(std::string mapInput)
 	inp.open(mapName);
 
 	int num = 0;
-	char temp[mapSize][mapSize];
+	char temp[mapSize + 1][mapSize];
 	while (!inp.eof())
 	{
 		inp >> temp[num];

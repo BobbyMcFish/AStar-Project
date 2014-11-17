@@ -11,7 +11,7 @@ private:
 	std::string mapData;
 	int beginningNode[2];
 	int endNode[2];
-	int map[mapSize][mapSize];
+	int map[][mapSize];
 public:
 	MapCreation(std::string map);
 	int GetMap(int i, int j) { return map[i][j]; }

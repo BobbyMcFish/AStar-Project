@@ -5,6 +5,9 @@
     <ClCompile Include="MapLoading.cpp">
       <Filter>Map/Pathfinding\.cpp Files</Filter>
     </ClCompile>
+    <ClCompile Include="aStarAlgo.cpp">
+      <Filter>Map/Pathfinding\.cpp Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="ReadMe.txt" />
@@ -22,6 +25,9 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MapLoading.h">
+      <Filter>Map/Pathfinding\.h Files</Filter>
+    </ClInclude>
+    <ClInclude Include="aStarAlgo.h">
       <Filter>Map/Pathfinding\.h Files</Filter>
     </ClInclude>
   </ItemGroup>
