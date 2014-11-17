@@ -96,8 +96,15 @@ node* AstarAlogrithm::Algorithm(int map[][mapSize2])
 				}
 
 			}
+			if (openList.empty() == true)
+			{
+				std::cout << "Failed";
+				break;
+			}
 		}
 	}
+	openList.clear();
+	closedList.clear();
 	return current;
 }
 node* AstarAlogrithm::NodeGeneration(int cost, int x, int y, int map[][mapSize2])

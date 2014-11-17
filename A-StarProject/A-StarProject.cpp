@@ -19,21 +19,30 @@ void main()
 	}
 	AstarAlogrithm Algo(MapStart.GetBeginningNode(),MapStart.GetEndNode());
 	node* path = Algo.Algorithm(map);
+	node* temp = path->parent;
 	int endX = path->x;
 	int endY = path->y;
 	int steps = path->stepsTaken;
-	for ()
-
+	for (int i = 0; i < (steps-1); i++)
+	{
+		temp = temp->parent;
+	}
+	int startX = temp->x;
+	int startY = temp->y;
 	// Create a 3D engine (using TLX engine here) and open a window for it
 	I3DEngine* myEngine = New3DEngine( kTLX );
 	myEngine->StartWindowed();
 
 	// Add default folder for meshes and other media
 	myEngine->AddMediaFolder( "C:\\ProgramData\\TL-Engine\\Media" );
-	ICamera* camera = myEngine->CreateCamera(kFPS);
+	ICamera* camera = myEngine->CreateCamera(kFPS,50,100,50);
+	camera->RotateLocalX(90);
 
 	IMesh* cubeMesh = myEngine->LoadMesh("Cube.x");
 	IModel* cube[100];
+	IMesh* playerMesh = myEngine->LoadMesh("sierra.x");
+	IModel* player = playerMesh->CreateModel(20, 10, 10);
+	player->Scale(10.0f);
 	int num = 0;
 	for (int i = 0; i < 10; i++)
 	{
@@ -43,6 +52,26 @@ void main()
 			if (map[i][j] == 0)
 			{
 				cube[num]->ScaleY(2.0f);
+			}
+			else if (startX == j && startY == i)
+			{
+				cube[num]->SetSkin("blue.png");
+			}
+			else if (endX == j && endY == i)
+			{
+				cube[num]->SetSkin("brown.png");
+			}
+			else if (map[i][j] == 1)
+			{
+				cube[num]->SetSkin("stone2.jpg");
+			}
+			else if (map[i][j] == 2)
+			{
+				cube[num]->SetSkin("brick1.jpg");
+			}
+			else if (map[i][j] == 3)
+			{
+				cube[num]->SetSkin("Baize.jpg");
 			}
 			num++;
 		}
