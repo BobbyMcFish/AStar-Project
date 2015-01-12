@@ -2,8 +2,8 @@
 
 MapCreation::MapCreation(std::string mapInput)
 {
-	mapName = mapInput + ".txt";
-	mapData = mapInput + "BE.txt";
+	std::string mapName = mapInput + ".txt";
+	std::string mapData = mapInput + "BE.txt";
 
 	std::ifstream inp;
 	std::ofstream ofp;

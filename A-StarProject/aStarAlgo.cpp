@@ -79,6 +79,7 @@ node* AstarAlogrithm::Algorithm(int map[][mapSize2])
 					{
 						closedList.at(i)->cost = tmp->cost; // if the currently generated node is found on the closed list and its cost is smaller it updates the closed list node
 						closedList.at(i)->parent = tmp->parent;
+						openList.push_back(closedList.at(i));
 						closed = true;
 					}
 					else if (tmp->x == closedList.at(i)->x && tmp->y == closedList.at(i)->y && tmp->cost >= closedList.at(i)->cost)

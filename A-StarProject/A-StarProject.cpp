@@ -3,12 +3,13 @@
 #include <TL-Engine.h>	// TL-Engine include file and namespace
 #include "MapLoading.h"
 #include "aStarAlgo.h"
+#include <deque>
 using namespace tle;
 
 void main()
 {
 
-	MapCreation MapStart("Map");
+	MapCreation MapStart("Maps\\Map");
 	int map[mapSize][mapSize];
 	for (int i = 0; i < mapSize; i++)
 	{
@@ -19,30 +20,39 @@ void main()
 	}
 	AstarAlogrithm Algo(MapStart.GetBeginningNode(),MapStart.GetEndNode());
 	node* path = Algo.Algorithm(map);
-	node* temp = path->parent;
+	node* temp = path;
 	int endX = path->x;
 	int endY = path->y;
 	int steps = path->stepsTaken;
-	for (int i = 0; i < (steps-1); i++)
+	deque<int> pathX; deque<int> pathY;
+	int tmpX; int tmpY;
+	for (int i = 0; i < steps; i++)
 	{
+		tmpX = (temp->x * 10);
+		tmpY = (temp->y * 10);
 		temp = temp->parent;
+		pathX.push_front(tmpX);
+		pathY.push_front(tmpY);
 	}
 	int startX = temp->x;
 	int startY = temp->y;
+	tmpX = startX * 10; pathX.push_front(tmpX);
+	tmpY = startY * 10; pathY.push_front(tmpY);
 	// Create a 3D engine (using TLX engine here) and open a window for it
 	I3DEngine* myEngine = New3DEngine( kTLX );
 	myEngine->StartWindowed();
 
 	// Add default folder for meshes and other media
-	myEngine->AddMediaFolder( "C:\\ProgramData\\TL-Engine\\Media" );
+	myEngine->AddMediaFolder( "C:\\ProgramData\\TL-Engine\\Media");
 	ICamera* camera = myEngine->CreateCamera(kFPS,50,100,50);
 	camera->RotateLocalX(90);
 
 	IMesh* cubeMesh = myEngine->LoadMesh("Cube.x");
 	IModel* cube[100];
-	IMesh* playerMesh = myEngine->LoadMesh("sierra.x");
-	IModel* player = playerMesh->CreateModel(20, 10, 10);
-	player->Scale(10.0f);
+	IMesh* playerMesh = myEngine->LoadMesh("Cube.x");
+	IModel* player = playerMesh->CreateModel(pathX.front(), 10, pathY.front());
+	pathX.pop_front(); pathY.pop_front();
+	player->Scale(0.5f);
 	int num = 0;
 	for (int i = 0; i < 10; i++)
 	{
@@ -55,11 +65,11 @@ void main()
 			}
 			else if (startX == j && startY == i)
 			{
-				cube[num]->SetSkin("blue.png");
+				cube[num]->SetSkin("BaizeDark.jpg");
 			}
 			else if (endX == j && endY == i)
 			{
-				cube[num]->SetSkin("brown.png");
+				cube[num]->SetSkin("CueMetal.jpg");
 			}
 			else if (map[i][j] == 1)
 			{
@@ -90,6 +100,20 @@ void main()
 		if (myEngine->KeyHit(Key_Escape))
 		{
 			myEngine->Stop();
+		}
+		if (myEngine->KeyHit(Key_Space))
+		{
+			if (pathX.size() == 0 || pathY.size() == 0)
+			{
+
+			}
+			else
+			{
+				player->SetX(pathX.front());
+				player->SetZ(pathY.front());
+				pathX.pop_front();
+				pathY.pop_front();
+			}
 		}
 
 	}
