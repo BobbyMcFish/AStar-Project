@@ -37,26 +37,38 @@ maps MapStorage(string mapName, int type)
 			tmp.map[i][j] = MapStart.GetMap(i, j);
 		}
 	}
-	AstarAlogrithm Algo(MapStart.GetBeginningNode(), MapStart.GetEndNode());
-	tmp.path = Algo.Algorithm(tmp.map);
-	node* temp = tmp.path;
-	tmp.endX = tmp.path->x;
-	tmp.endY = tmp.path->y;
-	tmp.steps = tmp.path->stepsTaken;
-	int tmpX; int tmpY;
-	for (int i = 0; i < tmp.steps; i++)
+	if (type == 4 || type == 0)
 	{
-		tmpX = (temp->x * 10);
-		tmpY = (temp->y * 10);
-		temp = temp->parent;
-		tmp.pathX.push_front(tmpX);
-		tmp.pathY.push_front(tmpY);
+
+		AstarAlogrithm Algo(MapStart.GetBeginningNode(), MapStart.GetEndNode());
+		tmp.path = Algo.Algorithm(tmp.map);
+		node* temp = tmp.path;
+		tmp.endX = tmp.path->x;
+		tmp.endY = tmp.path->y;
+		tmp.steps = tmp.path->stepsTaken;
+		int tmpX; int tmpY;
+		for (int i = 0; i < tmp.steps; i++)
+		{
+			tmpX = (temp->x * 10);
+			tmpY = (temp->y * 10);
+			temp = temp->parent;
+			tmp.pathX.push_front(tmpX);
+			tmp.pathY.push_front(tmpY);
+		}
+		tmp.startX = temp->x;
+		tmp.startY = temp->y;
+		tmpX = tmp.startX * 10; tmp.pathX.push_front(tmpX);
+		tmpY = tmp.startY * 10; tmp.pathY.push_front(tmpY);
 	}
-	tmp.startX = temp->x;
-	tmp.startY = temp->y;
-	tmpX = tmp.startX * 10; tmp.pathX.push_front(tmpX);
-	tmpY = tmp.startY * 10; tmp.pathY.push_front(tmpY);
-	return tmp;
+	else
+	{
+		tmp.startX = NULL; tmp.startY = NULL;
+		tmp.endX = NULL; tmp.endY = NULL;
+		tmp.path = NULL;
+		tmp.pathX.push_back(0);
+		tmp.pathY.push_back(0);
+	}
+		return tmp;
 }
 void MapSpawning(IMesh* cubeMesh, int map[mapSize][mapSize], int startX, int startY, int endX, int endY, int cubeX, int cubeY)
 {
@@ -106,8 +118,10 @@ void main()
 	fullMapX = mapCollection.at(0).pathX;
 	fullMapY = mapCollection.at(0).pathY;
 	mapCollection.push_back(MapStorage("Maps\\Complexity1\\1", 1));
-	mapCollection.push_back(MapStorage("Maps\\StartEndRooms\\Start", 2));
-	mapCollection.push_back(MapStorage("Maps\\StartEndRooms\\End", 3));
+	mapCollection.push_back(MapStorage("Maps\\Complexity2\\1", 2));
+	mapCollection.push_back(MapStorage("Maps\\Complexity3\\1", 3));
+	mapCollection.push_back(MapStorage("Maps\\StartEndRooms\\Start", 4));
+	mapCollection.push_back(MapStorage("Maps\\StartEndRooms\\End", 5));
 	int firstMap[mapSize][mapSize];
 	for (int i = 0; i < mapSize; i++)
 	{
@@ -115,7 +129,7 @@ void main()
 		{
 			firstMap[i][j] = mapCollection.at(0).map[i][j];
 		}
-	}
+	} 
 
 	// Create a 3D engine (using TLX engine here) and open a window for it
 	I3DEngine* myEngine = New3DEngine( kTLX );
@@ -140,18 +154,28 @@ void main()
 		{
 			if (firstMap[i][j] == 5)
 			{
-				MapSpawning(cubeMesh, mapCollection.at(3).map, mapCollection.at(3).startX,
-					mapCollection.at(3).startY, mapCollection.at(3).endX, mapCollection.at(3).endY, startX, startY);
+				MapSpawning(cubeMesh, mapCollection.at(5).map, mapCollection.at(5).startX,
+					mapCollection.at(5).startY, mapCollection.at(5).endX, mapCollection.at(5).endY, startX, startY);
 			}
 			if (firstMap[i][j] == 4)
 			{
-				MapSpawning(cubeMesh, mapCollection.at(2).map, mapCollection.at(2).startX,
-					mapCollection.at(2).startY, mapCollection.at(2).endX, mapCollection.at(2).endY, startX, startY);
+				MapSpawning(cubeMesh, mapCollection.at(4).map, mapCollection.at(4).startX,
+					mapCollection.at(4).startY, mapCollection.at(4).endX, mapCollection.at(4).endY, startX, startY);
 			}
 			if (firstMap[i][j] == 1)
 			{
 				MapSpawning(cubeMesh, mapCollection.at(1).map, mapCollection.at(1).startX,
 					mapCollection.at(1).startY, mapCollection.at(1).endX, mapCollection.at(1).endY, startX, startY);
+			}
+			if (firstMap[i][j] == 2)
+			{
+				MapSpawning(cubeMesh, mapCollection.at(2).map, mapCollection.at(2).startX,
+					mapCollection.at(2).startY, mapCollection.at(2).endX, mapCollection.at(2).endY, startX, startY);
+			}
+			if (firstMap[i][j] == 3) 
+			{
+				MapSpawning(cubeMesh, mapCollection.at(3).map, mapCollection.at(3).startX,
+					mapCollection.at(3).startY, mapCollection.at(3).endX, mapCollection.at(3).endY, startX, startY);
 			}
 			if (firstMap[i][j] == 0)
 			{
@@ -163,8 +187,8 @@ void main()
 		startY += 100;
 	} 
 
-	IModel* player = playerMesh->CreateModel(mapCollection.at(2).pathX.front(), 10, mapCollection.at(2).pathY.front());
-	mapCollection.at(2).pathX.pop_front(); mapCollection.at(2).pathY.pop_front();
+	IModel* player = playerMesh->CreateModel(mapCollection.at(4).pathX.front(), 10, mapCollection.at(4).pathY.front());
+	mapCollection.at(4).pathX.pop_front(); mapCollection.at(4).pathY.pop_front();
 
 	// Pre-set movement, any special settings before drawscene goes here
 	camera->RotateLocalX(90);
@@ -175,7 +199,7 @@ void main()
 	deque<int> currentPathX;
 	deque<int> currentPathY;
 
-	currentPathX = mapCollection.at(2).pathX; currentPathY = mapCollection.at(2).pathY;
+	currentPathX = mapCollection.at(4).pathX; currentPathY = mapCollection.at(4).pathY;
 	currentPathX.pop_front(); currentPathY.pop_front(); // pop the front of the path X and Y
 
 	// The main game loop, repeat until engine is stopped
@@ -216,7 +240,7 @@ void main()
 				{
 					start[0] = 4;
 					start[1] = 0;
-					int end[2];
+					
 					if (fullMapX.at(2) > fullMapX.at(1))
 					{
 						end[0] = 9; 

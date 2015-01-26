@@ -6,7 +6,7 @@ MapCreation::MapCreation(std::string mapInput, int num)
 	std::ifstream inp;
 	std::ofstream ofp;
 	
-	if (num == 2)
+	if (num == 4 || num == 0 || num == 5)
 	{
 		std::string mapData = mapInput + "BE.txt";
 		inp.open(mapData);
