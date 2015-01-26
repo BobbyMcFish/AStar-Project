@@ -10,7 +10,7 @@ private:
 	int endNode[2];
 	int map[mapSize][mapSize];
 public:
-	MapCreation(std::string map);
+	MapCreation(std::string map, int type);
 	int GetMap(int i, int j) { return map[i][j]; }
 	int* GetBeginningNode() { return beginningNode; }
 	int* GetEndNode() { return endNode; }
