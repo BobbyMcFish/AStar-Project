@@ -200,7 +200,6 @@ void main()
 	deque<int> currentPathY;
 
 	currentPathX = mapCollection.at(4).pathX; currentPathY = mapCollection.at(4).pathY;
-	currentPathX.pop_front(); currentPathY.pop_front(); // pop the front of the path X and Y
 
 														// The main game loop, repeat until engine is stopped
 	while (myEngine->IsRunning())
@@ -223,7 +222,7 @@ void main()
 				{
 					start[0] = 0;
 					start[1] = 4;
-					end[2];
+
 					if (fullMapX.at(2) > fullMapX.at(1))
 					{
 						end[0] = 9;
@@ -238,7 +237,7 @@ void main()
 				}
 				else if (fullMapY.at(1) > fullMapY.at(0))
 				{
-					start[0] = 4;
+ 					start[0] = 4;
 					start[1] = 0;
 
 					if (fullMapX.at(2) > fullMapX.at(1))
