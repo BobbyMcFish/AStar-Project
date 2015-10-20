@@ -7,7 +7,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="A-StarProject.cpp">
+    <ClCompile Include="AStar-Project.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

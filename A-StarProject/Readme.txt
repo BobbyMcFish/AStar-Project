@@ -1,5 +1,5 @@
 ===============================================================================
-           TL-Wizard : "A-StarProject" Project Overview
+           TL-Wizard : "AStar-Project" Project Overview
 ===============================================================================
 
 This project has been created for you as a starting point for your program.
@@ -10,7 +10,7 @@ Summary of the files in the project:
 ReadMe.txt
 	The file you are reading now.
 	
-A-StarProject.cpp
+AStar-Project.cpp
     This is the main program file. It already has the basic program code to
     initialise a 3D engine. You need to add extra code to load and position the
     objects in your scene, and to set up a camera. You can also add code to 

@@ -1,6 +1,0 @@
-﻿  A-StarProject.cpp
-c:\users\craig\documents\github\astar-project\a-starproject\a-starproject.cpp(81): warning C4244: 'argument' : conversion from 'int' to 'const float', possible loss of data
-c:\users\craig\documents\github\astar-project\a-starproject\a-starproject.cpp(190): warning C4244: 'argument' : conversion from 'int' to 'const float', possible loss of data
-c:\users\craig\documents\github\astar-project\a-starproject\a-starproject.cpp(272): warning C4244: 'argument' : conversion from 'int' to 'const float', possible loss of data
-c:\users\craig\documents\github\astar-project\a-starproject\a-starproject.cpp(273): warning C4244: 'argument' : conversion from 'int' to 'const float', possible loss of data
-  A-StarProject.vcxproj -> C:\Users\Craig\Documents\GitHub\AStar-Project\A-StarProject\\A-StarProjectDebug.exe
