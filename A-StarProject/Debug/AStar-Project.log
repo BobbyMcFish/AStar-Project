@@ -1,36 +1,43 @@
-﻿Build started 20/10/2015 02:48:27.
-     1>Project "C:\Users\Craig\Documents\GitHub\AStar-Project\A-StarProject\AStar-Project.vcxproj" on node 2 (Build target(s)).
-     1>Link:
-         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Craig\Documents\GitHub\AStar-Project\A-StarProject\AStar-ProjectDebug.exe" /INCREMENTAL /NOLOGO /LIBPATH:"C:\ProgramData\TL-Engine\lib" "TL-Engine2015Debug.lib" kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST:NO /Debug /PDB:"C:\Users\Craig\Documents\GitHub\AStar-Project\A-StarProject\\AStar-Project.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /IMPLIB:"C:\Users\Craig\Documents\GitHub\AStar-Project\A-StarProject\\AStar-ProjectDebug.lib" /MACHINE:X86 /SAFESEH:NO "Debug\AStar-Project.obj"
+﻿Build started 27/10/2015 01:59:02.
+     1>Project "C:\Users\Craig\Documents\AStar-Project\A-StarProject\AStar-Project.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\CL.exe /c /I"C:\ProgramData\TL-Engine\include" /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MTd /GS /Gy /fp:fast /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Debug\\" /Fd"Debug\vc140.pdb" /Gd /TP /analyze- /errorReport:prompt "AStar-Project.cpp"
+         AStar-Project.cpp
+     1>c:\users\craig\documents\astar-project\a-starproject\astar-project.cpp(81): warning C4244: 'argument': conversion from 'int' to 'const float', possible loss of data
+     1>c:\users\craig\documents\astar-project\a-starproject\astar-project.cpp(190): warning C4244: 'argument': conversion from 'int' to 'const float', possible loss of data
+     1>c:\users\craig\documents\astar-project\a-starproject\astar-project.cpp(285): warning C4244: 'argument': conversion from 'int' to 'const float', possible loss of data
+     1>c:\users\craig\documents\astar-project\a-starproject\astar-project.cpp(286): warning C4244: 'argument': conversion from 'int' to 'const float', possible loss of data
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Craig\Documents\AStar-Project\A-StarProject\AStar-ProjectDebug.exe" /INCREMENTAL /NOLOGO /LIBPATH:"C:\ProgramData\TL-Engine\lib" "TL-Engine2015Debug.lib" kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST:NO /Debug /PDB:"C:\Users\Craig\Documents\AStar-Project\A-StarProject\\AStar-Project.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /IMPLIB:"C:\Users\Craig\Documents\AStar-Project\A-StarProject\\AStar-ProjectDebug.lib" /MACHINE:X86 /SAFESEH:NO "Debug\AStar-Project.obj"
          Debug\aStarAlgo.obj
          Debug\MapLoading.obj
-     1>TL-Engine2015Debug.lib(TL-Engine.obj) : warning LNK4099: PDB 'TL-Engine.pdb' was not found with 'TL-Engine2015Debug.lib(TL-Engine.obj)' or at 'C:\Users\Craig\Documents\GitHub\AStar-Project\A-StarProject\TL-Engine.pdb'; linking object as if no debug info
-     1>TL-Engine2015Debug.lib(Errors.obj) : warning LNK4099: PDB 'Common.pdb' was not found with 'TL-Engine2015Debug.lib(Errors.obj)' or at 'C:\Users\Craig\Documents\GitHub\AStar-Project\A-StarProject\Common.pdb'; linking object as if no debug info
-     1>TL-Engine2015Debug.lib(TLXSprite.obj) : warning LNK4099: PDB '3DEngine.pdb' was not found with 'TL-Engine2015Debug.lib(TLXSprite.obj)' or at 'C:\Users\Craig\Documents\GitHub\AStar-Project\A-StarProject\3DEngine.pdb'; linking object as if no debug info
-     1>TL-Engine2015Debug.lib(TLXSceneNode.obj) : warning LNK4099: PDB '3DEngine.pdb' was not found with 'TL-Engine2015Debug.lib(TLXSceneNode.obj)' or at 'C:\Users\Craig\Documents\GitHub\AStar-Project\A-StarProject\3DEngine.pdb'; linking object as if no debug info
-     1>TL-Engine2015Debug.lib(TLXModelNode.obj) : warning LNK4099: PDB '3DEngine.pdb' was not found with 'TL-Engine2015Debug.lib(TLXModelNode.obj)' or at 'C:\Users\Craig\Documents\GitHub\AStar-Project\A-StarProject\3DEngine.pdb'; linking object as if no debug info
-     1>TL-Engine2015Debug.lib(TLXModel.obj) : warning LNK4099: PDB '3DEngine.pdb' was not found with 'TL-Engine2015Debug.lib(TLXModel.obj)' or at 'C:\Users\Craig\Documents\GitHub\AStar-Project\A-StarProject\3DEngine.pdb'; linking object as if no debug info
-     1>TL-Engine2015Debug.lib(TLXMesh.obj) : warning LNK4099: PDB '3DEngine.pdb' was not found with 'TL-Engine2015Debug.lib(TLXMesh.obj)' or at 'C:\Users\Craig\Documents\GitHub\AStar-Project\A-StarProject\3DEngine.pdb'; linking object as if no debug info
-     1>TL-Engine2015Debug.lib(TLXLight.obj) : warning LNK4099: PDB '3DEngine.pdb' was not found with 'TL-Engine2015Debug.lib(TLXLight.obj)' or at 'C:\Users\Craig\Documents\GitHub\AStar-Project\A-StarProject\3DEngine.pdb'; linking object as if no debug info
-     1>TL-Engine2015Debug.lib(TLXFont.obj) : warning LNK4099: PDB '3DEngine.pdb' was not found with 'TL-Engine2015Debug.lib(TLXFont.obj)' or at 'C:\Users\Craig\Documents\GitHub\AStar-Project\A-StarProject\3DEngine.pdb'; linking object as if no debug info
-     1>TL-Engine2015Debug.lib(TLXEngine.obj) : warning LNK4099: PDB '3DEngine.pdb' was not found with 'TL-Engine2015Debug.lib(TLXEngine.obj)' or at 'C:\Users\Craig\Documents\GitHub\AStar-Project\A-StarProject\3DEngine.pdb'; linking object as if no debug info
-     1>TL-Engine2015Debug.lib(TLXCamera.obj) : warning LNK4099: PDB '3DEngine.pdb' was not found with 'TL-Engine2015Debug.lib(TLXCamera.obj)' or at 'C:\Users\Craig\Documents\GitHub\AStar-Project\A-StarProject\3DEngine.pdb'; linking object as if no debug info
-     1>TL-Engine2015Debug.lib(IrrlichtSceneNode.obj) : warning LNK4099: PDB '3DEngine.pdb' was not found with 'TL-Engine2015Debug.lib(IrrlichtSceneNode.obj)' or at 'C:\Users\Craig\Documents\GitHub\AStar-Project\A-StarProject\3DEngine.pdb'; linking object as if no debug info
-     1>TL-Engine2015Debug.lib(IrrlichtModel.obj) : warning LNK4099: PDB '3DEngine.pdb' was not found with 'TL-Engine2015Debug.lib(IrrlichtModel.obj)' or at 'C:\Users\Craig\Documents\GitHub\AStar-Project\A-StarProject\3DEngine.pdb'; linking object as if no debug info
-     1>TL-Engine2015Debug.lib(IrrlichtMesh.obj) : warning LNK4099: PDB '3DEngine.pdb' was not found with 'TL-Engine2015Debug.lib(IrrlichtMesh.obj)' or at 'C:\Users\Craig\Documents\GitHub\AStar-Project\A-StarProject\3DEngine.pdb'; linking object as if no debug info
-     1>TL-Engine2015Debug.lib(IrrlichtLight.obj) : warning LNK4099: PDB '3DEngine.pdb' was not found with 'TL-Engine2015Debug.lib(IrrlichtLight.obj)' or at 'C:\Users\Craig\Documents\GitHub\AStar-Project\A-StarProject\3DEngine.pdb'; linking object as if no debug info
-     1>TL-Engine2015Debug.lib(IrrlichtInput.obj) : warning LNK4099: PDB '3DEngine.pdb' was not found with 'TL-Engine2015Debug.lib(IrrlichtInput.obj)' or at 'C:\Users\Craig\Documents\GitHub\AStar-Project\A-StarProject\3DEngine.pdb'; linking object as if no debug info
-     1>TL-Engine2015Debug.lib(IrrlichtFont.obj) : warning LNK4099: PDB '3DEngine.pdb' was not found with 'TL-Engine2015Debug.lib(IrrlichtFont.obj)' or at 'C:\Users\Craig\Documents\GitHub\AStar-Project\A-StarProject\3DEngine.pdb'; linking object as if no debug info
-     1>TL-Engine2015Debug.lib(IrrlichtEngine.obj) : warning LNK4099: PDB '3DEngine.pdb' was not found with 'TL-Engine2015Debug.lib(IrrlichtEngine.obj)' or at 'C:\Users\Craig\Documents\GitHub\AStar-Project\A-StarProject\3DEngine.pdb'; linking object as if no debug info
-     1>TL-Engine2015Debug.lib(IrrlichtCamera.obj) : warning LNK4099: PDB '3DEngine.pdb' was not found with 'TL-Engine2015Debug.lib(IrrlichtCamera.obj)' or at 'C:\Users\Craig\Documents\GitHub\AStar-Project\A-StarProject\3DEngine.pdb'; linking object as if no debug info
-         AStar-Project.vcxproj -> C:\Users\Craig\Documents\GitHub\AStar-Project\A-StarProject\\AStar-ProjectDebug.exe
+     1>TL-Engine2015Debug.lib(TL-Engine.obj) : warning LNK4099: PDB 'TL-Engine.pdb' was not found with 'TL-Engine2015Debug.lib(TL-Engine.obj)' or at 'C:\Users\Craig\Documents\AStar-Project\A-StarProject\TL-Engine.pdb'; linking object as if no debug info
+     1>TL-Engine2015Debug.lib(Errors.obj) : warning LNK4099: PDB 'Common.pdb' was not found with 'TL-Engine2015Debug.lib(Errors.obj)' or at 'C:\Users\Craig\Documents\AStar-Project\A-StarProject\Common.pdb'; linking object as if no debug info
+     1>TL-Engine2015Debug.lib(TLXSprite.obj) : warning LNK4099: PDB '3DEngine.pdb' was not found with 'TL-Engine2015Debug.lib(TLXSprite.obj)' or at 'C:\Users\Craig\Documents\AStar-Project\A-StarProject\3DEngine.pdb'; linking object as if no debug info
+     1>TL-Engine2015Debug.lib(TLXSceneNode.obj) : warning LNK4099: PDB '3DEngine.pdb' was not found with 'TL-Engine2015Debug.lib(TLXSceneNode.obj)' or at 'C:\Users\Craig\Documents\AStar-Project\A-StarProject\3DEngine.pdb'; linking object as if no debug info
+     1>TL-Engine2015Debug.lib(TLXModelNode.obj) : warning LNK4099: PDB '3DEngine.pdb' was not found with 'TL-Engine2015Debug.lib(TLXModelNode.obj)' or at 'C:\Users\Craig\Documents\AStar-Project\A-StarProject\3DEngine.pdb'; linking object as if no debug info
+     1>TL-Engine2015Debug.lib(TLXModel.obj) : warning LNK4099: PDB '3DEngine.pdb' was not found with 'TL-Engine2015Debug.lib(TLXModel.obj)' or at 'C:\Users\Craig\Documents\AStar-Project\A-StarProject\3DEngine.pdb'; linking object as if no debug info
+     1>TL-Engine2015Debug.lib(TLXMesh.obj) : warning LNK4099: PDB '3DEngine.pdb' was not found with 'TL-Engine2015Debug.lib(TLXMesh.obj)' or at 'C:\Users\Craig\Documents\AStar-Project\A-StarProject\3DEngine.pdb'; linking object as if no debug info
+     1>TL-Engine2015Debug.lib(TLXLight.obj) : warning LNK4099: PDB '3DEngine.pdb' was not found with 'TL-Engine2015Debug.lib(TLXLight.obj)' or at 'C:\Users\Craig\Documents\AStar-Project\A-StarProject\3DEngine.pdb'; linking object as if no debug info
+     1>TL-Engine2015Debug.lib(TLXFont.obj) : warning LNK4099: PDB '3DEngine.pdb' was not found with 'TL-Engine2015Debug.lib(TLXFont.obj)' or at 'C:\Users\Craig\Documents\AStar-Project\A-StarProject\3DEngine.pdb'; linking object as if no debug info
+     1>TL-Engine2015Debug.lib(TLXEngine.obj) : warning LNK4099: PDB '3DEngine.pdb' was not found with 'TL-Engine2015Debug.lib(TLXEngine.obj)' or at 'C:\Users\Craig\Documents\AStar-Project\A-StarProject\3DEngine.pdb'; linking object as if no debug info
+     1>TL-Engine2015Debug.lib(TLXCamera.obj) : warning LNK4099: PDB '3DEngine.pdb' was not found with 'TL-Engine2015Debug.lib(TLXCamera.obj)' or at 'C:\Users\Craig\Documents\AStar-Project\A-StarProject\3DEngine.pdb'; linking object as if no debug info
+     1>TL-Engine2015Debug.lib(IrrlichtSceneNode.obj) : warning LNK4099: PDB '3DEngine.pdb' was not found with 'TL-Engine2015Debug.lib(IrrlichtSceneNode.obj)' or at 'C:\Users\Craig\Documents\AStar-Project\A-StarProject\3DEngine.pdb'; linking object as if no debug info
+     1>TL-Engine2015Debug.lib(IrrlichtModel.obj) : warning LNK4099: PDB '3DEngine.pdb' was not found with 'TL-Engine2015Debug.lib(IrrlichtModel.obj)' or at 'C:\Users\Craig\Documents\AStar-Project\A-StarProject\3DEngine.pdb'; linking object as if no debug info
+     1>TL-Engine2015Debug.lib(IrrlichtMesh.obj) : warning LNK4099: PDB '3DEngine.pdb' was not found with 'TL-Engine2015Debug.lib(IrrlichtMesh.obj)' or at 'C:\Users\Craig\Documents\AStar-Project\A-StarProject\3DEngine.pdb'; linking object as if no debug info
+     1>TL-Engine2015Debug.lib(IrrlichtLight.obj) : warning LNK4099: PDB '3DEngine.pdb' was not found with 'TL-Engine2015Debug.lib(IrrlichtLight.obj)' or at 'C:\Users\Craig\Documents\AStar-Project\A-StarProject\3DEngine.pdb'; linking object as if no debug info
+     1>TL-Engine2015Debug.lib(IrrlichtInput.obj) : warning LNK4099: PDB '3DEngine.pdb' was not found with 'TL-Engine2015Debug.lib(IrrlichtInput.obj)' or at 'C:\Users\Craig\Documents\AStar-Project\A-StarProject\3DEngine.pdb'; linking object as if no debug info
+     1>TL-Engine2015Debug.lib(IrrlichtFont.obj) : warning LNK4099: PDB '3DEngine.pdb' was not found with 'TL-Engine2015Debug.lib(IrrlichtFont.obj)' or at 'C:\Users\Craig\Documents\AStar-Project\A-StarProject\3DEngine.pdb'; linking object as if no debug info
+     1>TL-Engine2015Debug.lib(IrrlichtEngine.obj) : warning LNK4099: PDB '3DEngine.pdb' was not found with 'TL-Engine2015Debug.lib(IrrlichtEngine.obj)' or at 'C:\Users\Craig\Documents\AStar-Project\A-StarProject\3DEngine.pdb'; linking object as if no debug info
+     1>TL-Engine2015Debug.lib(IrrlichtCamera.obj) : warning LNK4099: PDB '3DEngine.pdb' was not found with 'TL-Engine2015Debug.lib(IrrlichtCamera.obj)' or at 'C:\Users\Craig\Documents\AStar-Project\A-StarProject\3DEngine.pdb'; linking object as if no debug info
+         AStar-Project.vcxproj -> C:\Users\Craig\Documents\AStar-Project\A-StarProject\\AStar-ProjectDebug.exe
        PostBuildEvent:
-         copy "C:\ProgramData\TL-Engine\3rd Party\Irrlicht-0.7\bin\VisualStudio\IrrlichtDebug.dll" "C:\Users\Craig\Documents\GitHub\AStar-Project\A-StarProject\\" > NUL
-         copy "C:\ProgramData\TL-Engine\3rd Party\TL-Xtreme\shader\*.*" "C:\Users\Craig\Documents\GitHub\AStar-Project\A-StarProject\\" > NUL
+         copy "C:\ProgramData\TL-Engine\3rd Party\Irrlicht-0.7\bin\VisualStudio\IrrlichtDebug.dll" "C:\Users\Craig\Documents\AStar-Project\A-StarProject\\" > NUL
+         copy "C:\ProgramData\TL-Engine\3rd Party\TL-Xtreme\shader\*.*" "C:\Users\Craig\Documents\AStar-Project\A-StarProject\\" > NUL
          
          :VCEnd
-     1>Done Building Project "C:\Users\Craig\Documents\GitHub\AStar-Project\A-StarProject\AStar-Project.vcxproj" (Build target(s)).
+     1>Done Building Project "C:\Users\Craig\Documents\AStar-Project\A-StarProject\AStar-Project.vcxproj" (Build target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:14.09
+Time Elapsed 00:00:06.11

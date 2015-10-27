@@ -137,7 +137,7 @@ void main()
 
 
 	// Camera Setup
-	ICamera* camera = myEngine->CreateCamera(kFPS, 10, 100, 10);
+	ICamera* camera = myEngine->CreateCamera(kManual, 10, 100, 10);
 
 	// Mesh Creation
 	myEngine->AddMediaFolder("C:\\ProgramData\\TL-Engine\\Media");
@@ -200,7 +200,9 @@ void main()
 	deque<int> currentPathY;
 
 	currentPathX = mapCollection.at(4).pathX; currentPathY = mapCollection.at(4).pathY;
-
+	int mapNo = 0;
+	int addedX = 0;
+	int addedY = 0;
 														// The main game loop, repeat until engine is stopped
 	while (myEngine->IsRunning())
 	{
@@ -212,6 +214,14 @@ void main()
 		{
 			myEngine->Stop();
 		}
+		if (myEngine->KeyHeld(Key_Up))
+		{
+			camera->MoveLocalZ(0.5);
+		}
+		if (myEngine->KeyHeld(Key_Down))
+		{
+			camera->MoveLocalZ(-5.5);
+		}
 		if (myEngine->KeyHit(Key_Space))
 		{
 			if (currentPathX.size() == 0 && currentPathY.size() == 0)
@@ -222,6 +232,8 @@ void main()
 				{
 					start[0] = 0;
 					start[1] = 4;
+					addedX += 100;
+					player->SetX(player->GetX() + 10);
 
 					if (fullMapX.at(2) > fullMapX.at(1))
 					{
@@ -239,6 +251,8 @@ void main()
 				{
  					start[0] = 4;
 					start[1] = 0;
+					addedY += 100;
+					player->SetZ(player->GetZ() + 10);
 
 					if (fullMapX.at(2) > fullMapX.at(1))
 					{
@@ -251,9 +265,9 @@ void main()
 						end[1] = 9;
 					}
 				}
-
+				mapNo++;
 				AstarAlogrithm NextBlockAStar(start, end);
-				node* tmp = NextBlockAStar.Algorithm(mapCollection.at(1).map);
+				node* tmp = NextBlockAStar.Algorithm(mapCollection.at(firstMap[fullMapY.at(mapNo)/10][fullMapX.at(mapNo)]).map);
 				int tmpX;
 				int tmpY;
 				int steps = tmp->stepsTaken;
@@ -268,8 +282,8 @@ void main()
 			}
 			else
 			{
-				player->SetX(currentPathX.front());
-				player->SetZ(currentPathY.front());
+				player->SetX(currentPathX.front() + addedX);
+				player->SetZ(currentPathY.front() + addedY);
 				currentPathX.pop_front();
 				currentPathY.pop_front();
 			}
